@@ -4,15 +4,7 @@ using UnityEngine;
 
 public class PersonnageDeplacement : MonoBehaviour
 {
-    /*
-    public int BaseSpeed = 5;
-    private Vector3 DirectionDeplacement = Vector3.zero;
-    private CharacterController Player;
-    public int Sensibility;
-    public int Jump = 5;
-    public int Gravity = -1;
-    */
-
+    
     public CharacterController controller;
     public float speed = 12f;
     public float gravity = -9.81f;
@@ -23,35 +15,17 @@ public class PersonnageDeplacement : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        /*
-        Player = GetComponent<CharacterController>();
-        */
 
+        /* COMPRENDRE transform
+         si il y a transform.position = Vector3.zero
+        alors au lancement du jeu le personnage ira a la position (0, 0, 0)
+        */
     }
 
     // Update is called once per frame
     void Update()
     {
-        /*
-        DirectionDeplacement.z = Input.GetAxisRaw("Vertical");
-        DirectionDeplacement.x = Input.GetAxisRaw("Horizontal");
-        DirectionDeplacement = transform.TransformDirection(DirectionDeplacement);
-
-        //Deplacement
-        Player.Move(DirectionDeplacement * Time.deltaTime * BaseSpeed);
-             
-        //saut
-        if (Input.GetKeyDown(KeyCode.Space) && Player.isGrounded)
-        {
-            DirectionDeplacement.y = Jump;
-        }
-
-        //Gravité
-        if (!Player.isGrounded)
-        {
-            DirectionDeplacement.y += Gravity * Time.deltaTime;
-        }
-        */
+        
 
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
@@ -68,11 +42,12 @@ public class PersonnageDeplacement : MonoBehaviour
         }
 
 
+        //courir 
         if (Input.GetKeyDown(KeyCode.LeftShift))
         {
-            speed = speed * 2;
+            speed = speed * 2;           
         }
-
+        //fin de courir
         if (Input.GetKeyUp(KeyCode.LeftShift))
         {
             speed = speed / 2;
