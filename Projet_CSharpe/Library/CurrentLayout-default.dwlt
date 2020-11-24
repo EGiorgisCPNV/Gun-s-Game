@@ -48,7 +48,7 @@ MonoBehaviour:
   m_MinSize: {x: 679, y: 492}
   m_MaxSize: {x: 14002, y: 14042}
   vertical: 0
-  controlID: 20
+  controlID: 78
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -219,7 +219,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 492}
   m_MaxSize: {x: 10001, y: 14042}
   vertical: 1
-  controlID: 21
+  controlID: 79
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -244,7 +244,7 @@ MonoBehaviour:
   m_MinSize: {x: 403, y: 221}
   m_MaxSize: {x: 8003, y: 4021}
   vertical: 0
-  controlID: 22
+  controlID: 80
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -338,20 +338,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/BodyGuards/Meshes
+    - Assets
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/BodyGuards/Meshes
+  - Assets
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\Dylan-David.CUNHA-RO\Documents\GitHub\Gun-s-Game\Projet_CSharpe
+  m_LastProjectPath: C:\GitHub\ProjetCSharpe\ProjetCSharpe\Projet_CSharpe
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: de340000
-    m_LastClickedID: 13534
-    m_ExpandedIDs: 00000000883400008a3400008c3400008e340000e434000000ca9a3b
+    m_SelectedIDs: 18670000
+    m_LastClickedID: 26392
+    m_ExpandedIDs: 00000000166700001a6700001c6700001e67000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -379,7 +379,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000883400008a3400008c3400008e340000
+    m_ExpandedIDs: 0000000016670000186700001a6700001c6700001e670000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -423,7 +423,7 @@ MonoBehaviour:
       m_IsRenaming: 0
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
-      m_ClientGUIView: {fileID: 0}
+      m_ClientGUIView: {fileID: 5}
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
       m_InstanceID: 0
@@ -501,10 +501,10 @@ MonoBehaviour:
   m_ViewDataDictionary: {fileID: 0}
   m_SceneHierarchy:
     m_TreeViewState:
-      scrollPos: {x: 0, y: 956}
-      m_SelectedIDs: c83b0000
-      m_LastClickedID: 15304
-      m_ExpandedIDs: 4adfffff4cdfffff4edfffff52dfffff56dfffff58dfffff5cdfffff60dfffff62dfffff64dfffff68dfffff6adfffff6cdfffff72dfffff74dfffff76dfffff7adfffff7cdfffff7edfffff82dfffff84dfffff86dfffff88dfffff8cdfffff8edfffff92dfffff94dfffff98dfffff9cdfffff9edfffffa2dfffffa6dfffffa8dfffffaadfffffaedfffffb0dfffffb2dfffffb8dfffffbadfffffbcdfffffc0dfffffc2dfffffc4dfffffc8dfffffcadfffffccdfffffcedfffffd2dfffffd4dfffffd8dfffffdadfffffe8dfffff42e6ffff6afbffffa83b0000ac3b0000b83b0000d03b0000d23b0000d83b0000e43b0000
+      scrollPos: {x: 0, y: 0}
+      m_SelectedIDs: 
+      m_LastClickedID: 0
+      m_ExpandedIDs: a8fffeffa403ffff84660000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -614,11 +614,11 @@ MonoBehaviour:
   m_Rotation:
     m_Target: {x: 0.20744576, y: -0.41209117, z: 0.096888535, w: 0.881934}
     speed: 2
-    m_Value: {x: 0.20758592, y: -0.410758, z: 0.096574955, w: 0.8825301}
+    m_Value: {x: -0.20744574, y: 0.4120912, z: -0.096888535, w: -0.881934}
   m_Size:
-    m_Target: 1.4488261
+    m_Target: 2.048826
     speed: 2
-    m_Value: -1.4488261
+    m_Value: 1.748826
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -712,11 +712,11 @@ MonoBehaviour:
     m_DrawArea:
       serializedVersion: 2
       x: 0
-      y: 21
+      y: 0
       width: 944
-      height: 564
+      height: 585
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 472, y: 282}
+    m_Translation: {x: 472, y: 292.5}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -724,9 +724,9 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -472
-      y: -282
+      y: -292.5
       width: 944
-      height: 564
+      height: 585
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 944, y: 585}
