@@ -10,7 +10,10 @@ public class PersonnageDeplacement : MonoBehaviour
     public float gravity = -9.81f;
     public float jump = 4;
     Vector3 velocity;
-    
+
+    //int jumpCooldown = 0;
+
+    bool trueJump = true;
 
     // Start is called before the first frame update
     void Start()
@@ -24,6 +27,8 @@ public class PersonnageDeplacement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+       
+
         toMove();
         toJump();
         toCrouch();
@@ -46,13 +51,34 @@ public class PersonnageDeplacement : MonoBehaviour
     //Methode pour pouvoir sauter
     private void toJump()
     {
+        /*
+        jumpCooldown--;
+
+        if(jumpCooldown > 0)
+        {
+            return;
+        }
+        */
+
         //saut
         if (Input.GetKeyDown(KeyCode.Space))
         {
+            //jumpCooldown = 120;
             velocity.y = jump;
+            trueJump = false;
+
         }
     }
 
+    /*
+    void OnColliderEnter(Collision col)
+    {
+        if (col.CompareTag("Ground"))
+        {
+            trueJump = true;
+        }
+    }
+    */
 
     //Methode pour pouvoir s'acroupir
     private void toCrouch()
