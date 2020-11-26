@@ -6185,7 +6185,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   fpsCam: {fileID: 963194227}
-  muzzleFlash: {fileID: 0}
+  muzzleFlash: {fileID: 677432599}
 --- !u!1 &1701813708
 GameObject:
   m_ObjectHideFlags: 0
