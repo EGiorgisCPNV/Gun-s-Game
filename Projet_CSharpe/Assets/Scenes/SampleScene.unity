@@ -446,7 +446,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 677432596}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.1, z: 0.705}
+  m_LocalPosition: {x: 0, y: 0.109, z: 0.874}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 1016154225}
@@ -531,7 +531,7 @@ ParticleSystem:
   cullingMode: 0
   ringBufferMode: 0
   ringBufferLoopRange: {x: 0, y: 1}
-  looping: 1
+  looping: 0
   prewarm: 0
   playOnAwake: 1
   useUnscaledTime: 0
@@ -706,7 +706,7 @@ ParticleSystem:
     startColor:
       serializedVersion: 2
       minMaxState: 2
-      minColor: {r: 1, g: 0.4481132, b: 0.4481132, a: 1}
+      minColor: {r: 0.990566, g: 0.630785, b: 0.630785, a: 1}
       maxColor: {r: 1, g: 0.7086571, b: 0.41037738, a: 1}
       maxGradient:
         serializedVersion: 2
@@ -769,7 +769,7 @@ ParticleSystem:
     startSize:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.2
+      scalar: 0.16
       minScalar: 1
       maxCurve:
         serializedVersion: 2
@@ -1231,7 +1231,7 @@ ParticleSystem:
     sphericalDirectionAmount: 0
     randomPositionAmount: 0
     radius:
-      value: 0.01
+      value: 0.005
       mode: 0
       spread: 0
       speed:
@@ -5318,13 +5318,13 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 705507993}
-  m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
-  m_LocalPosition: {x: 71.8, y: 39.73, z: 61.8}
+  m_LocalRotation: {x: -0.8873253, y: 0.1461578, z: -0.24985372, w: -0.35897753}
+  m_LocalPosition: {x: 114.3, y: 104.9, z: -11.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+  m_LocalEulerAnglesHint: {x: 45.243004, y: 151.268, z: 546.524}
 --- !u!1 &706277463 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 108507113624723981, guid: eebb56c82efbd8d4bb0eb6bd925a0e9d,
@@ -5853,7 +5853,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 0, z: 0, w: 0}
+  m_BoundingSphereOverride: {x: 9.8e-43, y: 2.340638e+26, z: 4.5904e-41, w: 0}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6185,6 +6185,7 @@ MonoBehaviour:
   damage: 10
   range: 100
   fpsCam: {fileID: 963194227}
+  muzzleFlash: {fileID: 0}
 --- !u!1 &1701813708
 GameObject:
   m_ObjectHideFlags: 0
@@ -6259,6 +6260,28 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1701813708}
   m_CullTransparentMesh: 0
+--- !u!1 &1721360243 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100002, guid: e8ef930c672fcce4a88723bcce7a2591,
+    type: 3}
+  m_PrefabInstance: {fileID: 1379170613}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1721360244
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1721360243}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 621223f2bcf8e8e4fbaa6efba67f742a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 10
+  range: 100
+  fpsCam: {fileID: 0}
+  muzzleFlash: {fileID: 0}
 --- !u!1001 &1722614622
 PrefabInstance:
   m_ObjectHideFlags: 0
