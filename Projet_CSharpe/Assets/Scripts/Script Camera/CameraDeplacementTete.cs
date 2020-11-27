@@ -6,6 +6,7 @@ public class CameraDeplacementTete : MonoBehaviour
 {
     // A SAVOIR QUE [CHIFFRE]f SIGNIFIE DES DEGRE ex. 100f -> 100 degrés //
     public float mouseSensitivity = 100f;
+    public Transform playerBody;
 
     float xRotation = 0f;
 

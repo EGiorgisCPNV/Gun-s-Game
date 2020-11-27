@@ -11,11 +11,6 @@ public class PersonnageDeplacement : MonoBehaviour
     public float jump = 4;
     Vector3 velocity;
 
-    public Transform RightLegs;
-    public Transform LeftLegs;
-
- 
-
     //int jumpCooldown = 0;
 
     bool trueJump = true;
@@ -92,19 +87,12 @@ public class PersonnageDeplacement : MonoBehaviour
         {
             controller.height /= 2;
             speed /= 3;
-
-            RightLegs.localScale = new Vector3(RightLegs.localScale.x / 2, RightLegs.localScale.y, RightLegs.localScale.z);
-            LeftLegs.localScale = new Vector3(LeftLegs.localScale.x / 2, LeftLegs.localScale.y, LeftLegs.localScale.z); ;
         }
         //fin de s'acroupire
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             controller.height *= 2;
             speed *= 3;
-
-            RightLegs.localScale = new Vector3(RightLegs.localScale.x * 2, RightLegs.localScale.y, RightLegs.localScale.z); ;
-            LeftLegs.localScale = new Vector3(LeftLegs.localScale.x * 2, LeftLegs.localScale.y, LeftLegs.localScale.z); ;
-
         }
     }
 
