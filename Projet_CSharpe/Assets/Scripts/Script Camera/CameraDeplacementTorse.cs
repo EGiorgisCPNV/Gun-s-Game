@@ -6,7 +6,6 @@ public class CameraDeplacementTorse : MonoBehaviour
 {
     // A SAVOIR QUE [CHIFFRE]f SIGNIFIE DES DEGRE ex. 100f -> 100 degrés //
     public float mouseSensitivity = 100f;
-    public Transform playerBody;
 
     float xRotation = 0f;
 
@@ -32,7 +31,6 @@ public class CameraDeplacementTorse : MonoBehaviour
 
         //Deplacement camera
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);// axe Y
-        //playerBody.Rotate(Vector3.up * mouseX);// axe X 
 
 
     }

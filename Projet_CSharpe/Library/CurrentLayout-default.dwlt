@@ -101,7 +101,7 @@ MonoBehaviour:
   m_MinSize: {x: 781, y: 492}
   m_MaxSize: {x: 16006, y: 14042}
   vertical: 0
-  controlID: 62
+  controlID: 110
 --- !u!114 &5
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -147,8 +147,8 @@ MonoBehaviour:
     y: 0
     width: 285
     height: 596
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -272,7 +272,7 @@ MonoBehaviour:
   m_MinSize: {x: 505, y: 492}
   m_MaxSize: {x: 12005, y: 14042}
   vertical: 1
-  controlID: 63
+  controlID: 111
 --- !u!114 &12
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -298,7 +298,7 @@ MonoBehaviour:
   m_MinSize: {x: 505, y: 221}
   m_MaxSize: {x: 12005, y: 4021}
   vertical: 0
-  controlID: 64
+  controlID: 90
 --- !u!114 &13
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -357,8 +357,8 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 0
-    m_VSlider: 0
+    m_HSlider: 1
+    m_VSlider: 1
     m_IgnoreScrollWheelUntilClicked: 0
     m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
@@ -371,18 +371,18 @@ MonoBehaviour:
       y: 21
       width: 814
       height: 554
-    m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 407, y: 277}
+    m_Scale: {x: 1.3842336, y: 1.3842336}
+    m_Translation: {x: 487.37067, y: 301.2858}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -407
-      y: -277
-      width: 814
-      height: 554
+      x: -352.087
+      y: -217.65532
+      width: 588.051
+      height: 400.22147
     m_MinimalGUI: 1
   m_defaultScale: 1
   m_LastWindowPixelSize: {x: 814, y: 575}
@@ -456,20 +456,20 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Scripts/Script Camera
+    - Assets/Scripts/Script Personnage
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Scripts/Script Camera
+  - Assets/Scripts/Script Personnage
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\GitHub\ProjetCSharpe\ProjetCSharpe\Projet_CSharpe
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 58}
-    m_SelectedIDs: 82360000
-    m_LastClickedID: 13954
-    m_ExpandedIDs: 0000000066360000683600006a3600006c3600006e3600008036000000ca9a3b
+    m_SelectedIDs: 98360000
+    m_LastClickedID: 13976
+    m_ExpandedIDs: 0000000060360000623600006436000066360000683600007a36000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -497,7 +497,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000066360000683600006a3600006c3600006e360000
+    m_ExpandedIDs: 000000006036000062360000643600006636000068360000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -622,18 +622,18 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 1cfaffff20faffff98faffff9efaffffa0faffff34fbffff60fbffff6afbffffd2330000e8330000123400001e3400003034000046340000543400006e34000072340000
+      m_ExpandedIDs: 96faffff9cfaffffa4faffffa8faffffaefaffff26fbffff34fbffff60fbffff6afbffffd2330000e8330000123400001e3400002234000030340000543400006c340000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: Spine1
-        m_OriginalName: Spine1
+        m_Name: LeftUpLeg
+        m_OriginalName: LeftUpLeg
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 13422
+        m_UserData: -1236
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
         m_OriginalEventType: 0
@@ -682,9 +682,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 14.449086, y: 30.66216, z: 0.5612554}
+    m_Target: {x: 15.3354025, y: 28.004099, z: -1.1821489}
     speed: 2
-    m_Value: {x: 14.449086, y: 30.66216, z: 0.5612554}
+    m_Value: {x: 15.3354025, y: 28.004099, z: -1.1821489}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -730,13 +730,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: -0.034471273, y: -0.036867402, z: -0.0012706483, w: 0.99872863}
+    m_Target: {x: 0.12656136, y: 0.09567026, z: -0.012262038, w: 0.9872639}
     speed: 2
-    m_Value: {x: -0.03447114, y: -0.036867257, z: -0.0012706433, w: 0.9987247}
+    m_Value: {x: 0.12656066, y: 0.09566974, z: -0.012261971, w: 0.9872585}
   m_Size:
-    m_Target: 4.5791264
+    m_Target: 3.6073947
     speed: 2
-    m_Value: 4.5791264
+    m_Value: 3.6073947
   m_Ortho:
     m_Target: 0
     speed: 2
