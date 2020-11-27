@@ -26,7 +26,7 @@ public class CameraDeplacementTete : MonoBehaviour
 
         
         xRotation -= mouseY;
-        xRotation = Mathf.Clamp(xRotation, -90f, 45f);//bloque la vue de 90 degré a -90 degrés
+        xRotation = Mathf.Clamp(xRotation, -45f, 25f);//bloque la vue de 90 degré a -90 degrés
         
 
         //Deplacement camera

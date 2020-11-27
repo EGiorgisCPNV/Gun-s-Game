@@ -255,9 +255,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144917049}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75c0610fd9db4b4193f79c87cb05471, type: 3}
+  m_Script: {fileID: 11500000, guid: 696e05faaa115c04faaf36a49aeb1cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
@@ -374,9 +374,9 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 371914149}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75c0610fd9db4b4193f79c87cb05471, type: 3}
+  m_Script: {fileID: 11500000, guid: 696e05faaa115c04faaf36a49aeb1cae, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
@@ -5542,6 +5542,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: -0
       objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 765e2fde8c84f094e99304c6198491ea, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 765e2fde8c84f094e99304c6198491ea, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 765e2fde8c84f094e99304c6198491ea, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 765e2fde8c84f094e99304c6198491ea, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 400010, guid: 765e2fde8c84f094e99304c6198491ea, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 400084, guid: 765e2fde8c84f094e99304c6198491ea, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0.17
@@ -5921,7 +5941,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 8.313e-42, z: 0, w: -3}
+  m_BoundingSphereOverride: {x: 0, y: 7.4e-44, z: 2.811e-42, w: 5.9e-44}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6229,8 +6249,8 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1642043441}
-  m_LocalRotation: {x: 0.000559695, y: -0.5978589, z: -0.0004172846, w: 0.80160105}
-  m_LocalPosition: {x: -5.8900204, y: -5.9854546, z: -15.741763}
+  m_LocalRotation: {x: 0.00055970246, y: -0.5978589, z: -0.00041727716, w: 0.80160105}
+  m_LocalPosition: {x: -5.8900223, y: -5.9854546, z: -15.741767}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 41003608}
@@ -6339,20 +6359,6 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 903448929}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &1704991934
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1704991932}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75c0610fd9db4b4193f79c87cb05471, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseSensitivity: 100
-  playerBody: {fileID: 1704991933}
 --- !u!114 &1704991935
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6629,26 +6635,6 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 93caadf4359ae8143aad35b3145d31af, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 5c3cbac9d5eae3844a928d36e6dbd1a6, type: 3}
---- !u!1 &1928716948 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 100158, guid: 765e2fde8c84f094e99304c6198491ea,
-    type: 3}
-  m_PrefabInstance: {fileID: 903448929}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1928716950
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1928716948}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75c0610fd9db4b4193f79c87cb05471, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  mouseSensitivity: 100
-  playerBody: {fileID: 1704991933}
 --- !u!1 &2090186005
 GameObject:
   m_ObjectHideFlags: 0
