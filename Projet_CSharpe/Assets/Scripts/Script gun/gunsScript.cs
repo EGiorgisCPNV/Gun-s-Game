@@ -15,14 +15,18 @@ public class gunsScript : MonoBehaviour
     {
         if (Input.GetButtonDown("Fire1"))
         {
-            Shoot();
+            if (!Input.GetKeyDown(KeyCode.LeftControl))
+            {
+                Shoot();
+            }
+            
         }
     }
 
     void Shoot()
     {
 
-        muzzleFlash.Play();
+        muzzleFlash.Play();//affiche l'effet
 
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, range))

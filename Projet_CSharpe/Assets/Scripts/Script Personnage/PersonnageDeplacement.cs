@@ -27,8 +27,7 @@ public class PersonnageDeplacement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
-
+      
         toMove();
         toJump();
         toCrouch();

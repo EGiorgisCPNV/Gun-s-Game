@@ -8,7 +8,7 @@ public class CameraDeplacement : MonoBehaviour
     public float mouseSensitivity = 100f;
     public Transform playerBody;
     
-    float xRotation = 0f;
+    //float xRotation = 0f;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +25,13 @@ public class CameraDeplacement : MonoBehaviour
         float mouseX = Input.GetAxis("Mouse X") * mouseSensitivity * Time.deltaTime;
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
+        /*
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -90f, 45f);//bloque la vue de 90 degré a -90 degrés
+        */
 
         //Deplacement camera
-        transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);// axe Y
+        //transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);// axe Y
         playerBody.Rotate(Vector3.up * mouseX);// axe X 
  
 
