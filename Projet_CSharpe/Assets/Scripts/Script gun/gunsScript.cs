@@ -7,22 +7,35 @@ public class gunsScript : MonoBehaviour
 
     public Camera fpsCam;
     public ParticleSystem muzzleFlash;
+    public GameObject impact;
+    public float fireRate = 15f;
 
+    private float nextTimeToFire = 0f;
+    AudioSource shootSound;
 
+    private void Start()
+    {
+        shootSound = GetComponent<AudioSource>();
+    }
 
     // Update is called once per frame
     void Update()
-    {
-        if (Input.GetButtonDown("Fire1"))
-        {
-            if (!Input.GetKeyDown(KeyCode.LeftControl))
+    {      
+            if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
             {
-                Shoot();
-            }
-            
-        }
-    }
+                if (!Input.GetKeyDown(KeyCode.LeftControl))
+                {
+                    nextTimeToFire = Time.time + 1f / fireRate;
+                    shootSound.Play();
+                    Shoot();
+                }
 
+            }    
+    }
+    public float Damage
+    {
+        get { return damage; }
+    }
     void Shoot()
     {
 
@@ -38,6 +51,9 @@ public class gunsScript : MonoBehaviour
             {
                 target.TakeDamage(damage);
             }
+
+            GameObject bulletEffect = Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(bulletEffect, 1f);
         }
     }
 }

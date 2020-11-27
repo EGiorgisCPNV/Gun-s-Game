@@ -24,7 +24,13 @@ public class BulletHole : MonoBehaviour
 
             if(Physics.Raycast(cam.transform.position,cam.transform.forward, out hit, distance))
             {             
-                GameObject bH = Instantiate(bulletHole, hit.point + new Vector3(0f, 0f, -.02f),Quaternion.LookRotation(-hit.normal));
+                Targget target = hit.transform.GetComponent<Targget>();
+                if (target.heatlh > 0)
+                {
+                    GameObject bH = Instantiate(bulletHole, hit.point + new Vector3(0f, 0f, -.02f), Quaternion.LookRotation(-hit.normal));
+                    target.addBulletHole(bH);
+                }
+                
             }
         }
     }

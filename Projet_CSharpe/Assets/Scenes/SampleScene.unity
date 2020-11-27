@@ -454,6 +454,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heatlh: 10
+  damageable: 1
 --- !u!4 &561863798 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1279437348525638701, guid: e2e682b966e3f644392ffbfab511e0e2,
@@ -5384,6 +5385,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heatlh: 10
+  damageable: 1
 --- !u!1 &723087821
 GameObject:
   m_ObjectHideFlags: 0
@@ -5781,6 +5783,7 @@ GameObject:
   - component: {fileID: 963194228}
   - component: {fileID: 963194227}
   - component: {fileID: 963194226}
+  - component: {fileID: 963194229}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5853,6 +5856,25 @@ Transform:
   m_Father: {fileID: 1704991933}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: -0.024, y: 7.162, z: 2.203}
+--- !u!95 &963194229
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 963194225}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 54ff599963ec97843ad4d4ddeeb61810, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1016154224
 GameObject:
   m_ObjectHideFlags: 0
@@ -6004,7 +6026,7 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Materials.Array.data[0]
       value: 
-      objectReference: {fileID: 2100000, guid: dd594aa7b65105b4f830bddd556f66fa, type: 2}
+      objectReference: {fileID: 2100000, guid: 432d27f28c1251041bd6d1753602d5f0, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 3e14265d9e8070c41b0dfd34823b9296, type: 3}
 --- !u!1 &1119349910
@@ -6131,7 +6153,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435a72692c22ffd449348f46079da333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatlh: 10
+  heatlh: 20
+  damageable: 1
 --- !u!1 &1367465519 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4385080170328260021, guid: ff62b58c5a9ea164fa8ddf8038e10cd1,
@@ -6151,6 +6174,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heatlh: 10
+  damageable: 1
 --- !u!1 &1375942262
 GameObject:
   m_ObjectHideFlags: 0
@@ -6287,6 +6311,26 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: e1c9008e7943d6745bac8c7b766cbdf7, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e8ef930c672fcce4a88723bcce7a2591, type: 3}
+--- !u!1 &1546544758 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1932439330902218, guid: 3e14265d9e8070c41b0dfd34823b9296,
+    type: 3}
+  m_PrefabInstance: {fileID: 1044055311}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &1546544763
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1546544758}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435a72692c22ffd449348f46079da333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heatlh: 10
+  damageable: 0
 --- !u!1 &1642043441
 GameObject:
   m_ObjectHideFlags: 0
@@ -6298,6 +6342,7 @@ GameObject:
   - component: {fileID: 1642043442}
   - component: {fileID: 1642043443}
   - component: {fileID: 1642043444}
+  - component: {fileID: 1642043445}
   m_Layer: 0
   m_Name: Weapons
   m_TagString: Untagged
@@ -6336,6 +6381,8 @@ MonoBehaviour:
   range: 100
   fpsCam: {fileID: 963194227}
   muzzleFlash: {fileID: 677432599}
+  impact: {fileID: 5832505332425788790, guid: 033d3be46cdc4f445865b1b605b351ad, type: 3}
+  fireRate: 15
 --- !u!114 &1642043444
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6351,6 +6398,102 @@ MonoBehaviour:
   bulletHole: {fileID: 6261077028362023562, guid: 53a69ddf94e0a8448af1d28fab8695d9,
     type: 3}
   distance: 10000
+--- !u!82 &1642043445
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1642043441}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 94084a2169983314692a4b29adea73ae, type: 3}
+  m_PlayOnAwake: 1
+  m_Volume: 0.831
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0.33333334
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
 --- !u!1 &1701813708
 GameObject:
   m_ObjectHideFlags: 0
@@ -6651,6 +6794,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   heatlh: 10
+  damageable: 1
 --- !u!1 &1892989683
 GameObject:
   m_ObjectHideFlags: 0
