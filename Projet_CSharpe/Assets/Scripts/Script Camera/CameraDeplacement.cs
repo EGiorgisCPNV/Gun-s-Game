@@ -4,11 +4,11 @@ using UnityEngine;
 
 public class CameraDeplacement : MonoBehaviour
 {
+    //Public//
     // A SAVOIR QUE [CHIFFRE]f SIGNIFIE DES DEGRE ex. 100f -> 100 degrés //
     public float mouseSensitivity = 100f;
     public Transform playerBody;
-    
-    //float xRotation = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,7 @@ public class CameraDeplacement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
 
     }
+
 
     // Update is called once per frame
     void Update()
@@ -33,7 +34,7 @@ public class CameraDeplacement : MonoBehaviour
         //Deplacement camera
         //transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);// axe Y
         playerBody.Rotate(Vector3.up * mouseX);// axe X 
- 
+
 
     }
 }

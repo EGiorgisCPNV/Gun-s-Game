@@ -4,11 +4,15 @@ using UnityEngine;
 
 public class CameraDeplacementTete : MonoBehaviour
 {
+    //Public//
     // A SAVOIR QUE [CHIFFRE]f SIGNIFIE DES DEGRE ex. 100f -> 100 degrés //
     public float mouseSensitivity = 100f;
     public Transform playerBody;
 
+
+    //Private//
     float xRotation = 0f;
+
 
     // Start is called before the first frame update
     void Start()
@@ -18,16 +22,17 @@ public class CameraDeplacementTete : MonoBehaviour
 
     }
 
+
     // Update is called once per frame
     void Update()
     {
         //variable pour designer les axe de souris 
         float mouseY = Input.GetAxis("Mouse Y") * mouseSensitivity * Time.deltaTime;
 
-        
+
         xRotation -= mouseY;
         xRotation = Mathf.Clamp(xRotation, -45f, 25f);//bloque la vue de 90 degré a -90 degrés
-        
+
 
         //Deplacement camera
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);// axe Y

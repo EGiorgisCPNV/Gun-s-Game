@@ -5,15 +5,21 @@ using UnityEngine;
 public class BulletHole : MonoBehaviour
 {
 
-    public GameObject bulletHole;
+    //Public//
+    public GameObject bulletHole ;
     public float distance = 1000f;
+
+
+    //Private//
     Camera cam;
+
 
     // Start is called before the first frame update
     void Start()
     {
         cam = Camera.main;
     }
+
 
     // Update is called once per frame
     void Update()
