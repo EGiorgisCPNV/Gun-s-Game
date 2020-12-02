@@ -47,7 +47,7 @@ public class PersonnageDeplacement : MonoBehaviour
     void OnCollisionEnter(Collision col)
     {
 
-        if (col.collider.name == "Ground_02")
+        if (col.collider.name == "FloorPrototype")
         {
             FloorIsTouch = true;
         }
