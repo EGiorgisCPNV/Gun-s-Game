@@ -33,7 +33,6 @@ public class PersonnageDeplacement : MonoBehaviour
     void Update()
     {
 
-
         isCollider();
         toMove();
         toJump();
@@ -47,13 +46,10 @@ public class PersonnageDeplacement : MonoBehaviour
     //cette methode sert a chager la valeur de l'attribut FloorIsTouch en fonction de si le personnage touche le sol ou non
     private void isCollider()
     {
-
         if (controller.isGrounded)
         {
             FloorIsTouch = true;
         }
-        
-
     }
 
 
@@ -66,6 +62,7 @@ public class PersonnageDeplacement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
 
+        
     }
 
 
@@ -130,14 +127,9 @@ public class PersonnageDeplacement : MonoBehaviour
     //Methode pour la gravité
     private void GetGravity()
     {
-
         //Gravité
-
         velocity.y += gravity * Time.deltaTime;
         controller.Move(velocity * Time.deltaTime);
-
-
-
     }
 
 
