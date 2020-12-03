@@ -32,7 +32,9 @@ public class PersonnageDeplacement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-       
+
+
+        isCollider();
         toMove();
         toJump();
         toCrouch();
@@ -43,14 +45,14 @@ public class PersonnageDeplacement : MonoBehaviour
 
 
     //cette methode sert a chager la valeur de l'attribut FloorIsTouch en fonction de si le personnage touche le sol ou non
-    //A savoir que cette methode est comme la methode Update chaque frame elle est appelée
-    void OnCollisionEnter(Collision col)
+    private void isCollider()
     {
 
-        if (col.collider.name == "FloorPrototype")
+        if (controller.isGrounded)
         {
             FloorIsTouch = true;
         }
+        
 
     }
 
@@ -90,7 +92,7 @@ public class PersonnageDeplacement : MonoBehaviour
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
             controller.height /= 2;
-            speed /= 3;
+            speed = basicSpeed/3;
             LeftLeg.localRotation = Quaternion.Euler(LeftLeg.localRotation.x, LeftLeg.localRotation.y, -100f);
             RightLegCuisse.localRotation = Quaternion.Euler(2.213f, -88.58f, 0f);
             RightLegTibia.localRotation = Quaternion.Euler(0f, 0f, -88.284f);
@@ -99,7 +101,7 @@ public class PersonnageDeplacement : MonoBehaviour
         if (Input.GetKeyUp(KeyCode.LeftControl))
         {
             controller.height *= 2;
-            speed *= 3;
+            speed = basicSpeed;
             LeftLeg.localRotation = Quaternion.Euler(LeftLeg.localRotation.x, LeftLeg.localRotation.y, 0f);
             RightLegCuisse.localRotation = Quaternion.Euler(2.213f, -88.58f, -88.284f);
             RightLegTibia.localRotation = Quaternion.Euler(0f, 0f, 0f);
