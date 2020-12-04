@@ -26,6 +26,7 @@ public class PersonnageDeplacement : MonoBehaviour
     void Start()
     {
         basicSpeed = speed;
+        
     }
 
 

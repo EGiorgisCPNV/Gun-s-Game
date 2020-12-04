@@ -5807,15 +5807,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 400154, guid: 765e2fde8c84f094e99304c6198491ea, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400154, guid: 765e2fde8c84f094e99304c6198491ea, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400154, guid: 765e2fde8c84f094e99304c6198491ea, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 400154, guid: 765e2fde8c84f094e99304c6198491ea, type: 3}
       propertyPath: m_LocalRotation.x
@@ -6473,8 +6473,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 435a72692c22ffd449348f46079da333, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  heatlh: 10
-  damageable: 0
+  heatlh: 100000
+  damageable: 1
 --- !u!4 &1413762797 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 400148, guid: 765e2fde8c84f094e99304c6198491ea,
@@ -6619,7 +6619,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  range: 100
+  maxRange: 100
   fpsCam: {fileID: 963194227}
   muzzleFlash: {fileID: 677432599}
   impact: {fileID: 5832505332425788790, guid: 033d3be46cdc4f445865b1b605b351ad, type: 3}
