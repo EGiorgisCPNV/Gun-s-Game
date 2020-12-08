@@ -20,11 +20,8 @@ public class gunsScript : MonoBehaviour
     private float damage = 10f;
     private float nextTimeToFire = 0f;
     AudioSource shootSound;
-    Vector3 randomPosition;
-
-
-
-
+    Vector3 randomShotJump;
+    Vector3 randomShotSprint;
 
 
     //cette accesseur sert a retourner la valeur des dégats
@@ -34,31 +31,46 @@ public class gunsScript : MonoBehaviour
     }
 
 
-    public Vector3 RandomPosition
+    public Vector3 RandomShotJump
     {
-        get
+        get { return randomShotJump; }
+        /*
+        set
         {
-            return randomPosition;
+            randomShotJump = value;
+            //Debug.Log("JUUUUUUUUUUMP" + randomShotJump);
         }
+        */
+    }
+
+    public Vector3 RandomShotSprint
+    {
+        get { return randomShotSprint; }
+        /*
+        set
+        {
+            randomShotSprint = value;
+            //Debug.Log("SPRIIIIIIIIIIIINT" + randomShotSprint);
+
+        }
+        */
     }
 
     //cette methode est appelée au lancement du programe 
     private void Start()
     {
-
         shootSound = GetComponent<AudioSource>();
     }
+
 
 
     // Update is called once per frame
     void Update()
     {
-        //Random.Range(100f, 100f)
+        randomShotJump = new Vector3(Random.Range(-0.065f, 0.065f), Random.Range(-0.065f, 0.065f), 0f);
+        randomShotSprint = new Vector3(Random.Range(-0.07f, 0.07f), Random.Range(-0.07f, 0.07f), 0f);
 
-        //ne peut pas être initialiser en haut dans les attribut, que dans des methode
-        randomPosition = new Vector3(0.1f, 0, 33f);
-
-        //Debug.Log(randomPosition);
+        Debug.Log("asdasdas" + RandomShotJump);
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
             {
@@ -67,30 +79,65 @@ public class gunsScript : MonoBehaviour
                Shoot();
             
         }
-
-
-
     }
 
-    
+    /*
+    public void ShowRandomShotJumpValue()
+    {
+        Debug.Log("Juuuuump  " + randomShotJump);
+    }
+
+    public void ShowRandomShotSprintValue()
+    {
+        Debug.Log("Spriiiiiint  " + randomShotSprint);
+    }
+    */
+
 
     //cette methode permet 
     void Shoot()
     {
+        
+
         if (Input.GetButton("Space"))
         {
-            Debug.Log("JumpShot");
-            Debug.Log(randomPosition);
+            //Debug.Log("JumpShot");
             JumpShot();
+        }
+        else if (Input.GetButton("LeftShift"))
+        {
+            //Debug.Log("SprintShot");
+            SprintShot();
         }
         else
         {
-            Debug.Log("StaticShot");
-            Debug.Log(randomPosition);
+            //Debug.Log("StaticShot");
             StaticShot();
         }
         
-       
+      
+    }
+
+
+    private void StaticShot()
+    {
+        muzzleFlash.Play();//affiche l'effet
+
+        RaycastHit hit;
+
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, maxRange))
+        {
+            //Debug.Log(hit.transform.name);
+
+            Targget target = hit.transform.GetComponent<Targget>();
+            if (target != null)
+            {
+                target.TakeDamage(damage);
+            }
+
+            GameObject bulletEffect = Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
+            Destroy(bulletEffect, 1f);
+        }
     }
 
 
@@ -98,12 +145,14 @@ public class gunsScript : MonoBehaviour
     {
         muzzleFlash.Play();//affiche l'effet
 
+        
 
         RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward, out hit, maxRange))
+
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward + randomShotJump, out hit, maxRange))
         {
             //Debug.Log(hit.transform.name);
-
+            //Debug.Log(randomShotJump);
 
             Targget target = hit.transform.GetComponent<Targget>();
             if (target != null)
@@ -111,22 +160,19 @@ public class gunsScript : MonoBehaviour
                 target.TakeDamage(damage);
             }
                         
-
             GameObject bulletEffect = Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(bulletEffect, 1f);
-
-
         }
     }
 
 
-    private void StaticShot()
+    private void SprintShot()
     {
         muzzleFlash.Play();//affiche l'effet
-        
 
+      
         RaycastHit hit;
-        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward , out hit, maxRange))
+        if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward + randomShotSprint, out hit, maxRange))
         {
             //Debug.Log(hit.transform.name);
 
@@ -135,11 +181,10 @@ public class gunsScript : MonoBehaviour
             {
                 target.TakeDamage(damage);
             }
-            
+
 
             GameObject bulletEffect = Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(bulletEffect, 1f);
         }
     }
-
 }
