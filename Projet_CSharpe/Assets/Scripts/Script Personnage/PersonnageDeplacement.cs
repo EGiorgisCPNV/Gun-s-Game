@@ -11,9 +11,7 @@ public class PersonnageDeplacement : MonoBehaviour
     public float speed = 12f;  
     public float gravity = -9.81f;
     public float jump = 4;
-    public Transform LeftLeg;
-    public Transform RightLegCuisse;
-    public Transform RightLegTibia;
+    Animator animation;
 
 
     //Private//
@@ -26,7 +24,8 @@ public class PersonnageDeplacement : MonoBehaviour
     void Start()
     {
         basicSpeed = speed;
-        
+        animation = gameObject.GetComponent<Animator>();
+
     }
 
 
@@ -63,6 +62,17 @@ public class PersonnageDeplacement : MonoBehaviour
         Vector3 move = transform.right * x + transform.forward * z;
         controller.Move(move * speed * Time.deltaTime);
 
+        if(z == 1)
+        {
+            animation.SetBool("isWalking", true);
+        }
+        else if(z == -1)
+        {
+
+        }else if(z == 0)
+        {
+            animation.SetBool("isWalking", false);
+        }
         
     }
 
@@ -86,24 +96,7 @@ public class PersonnageDeplacement : MonoBehaviour
     //Methode pour pouvoir s'acroupir
     private void toCrouch()
     {
-        //s'acroupir
-        if (Input.GetKeyDown(KeyCode.LeftControl))
-        {
-            controller.height /= 2;
-            speed = basicSpeed/3;
-            LeftLeg.localRotation = Quaternion.Euler(LeftLeg.localRotation.x, LeftLeg.localRotation.y, -100f);
-            RightLegCuisse.localRotation = Quaternion.Euler(2.213f, -88.58f, 0f);
-            RightLegTibia.localRotation = Quaternion.Euler(0f, 0f, -88.284f);
-        }
-        //fin de s'acroupire
-        if (Input.GetKeyUp(KeyCode.LeftControl))
-        {
-            controller.height *= 2;
-            speed = basicSpeed;
-            LeftLeg.localRotation = Quaternion.Euler(LeftLeg.localRotation.x, LeftLeg.localRotation.y, 0f);
-            RightLegCuisse.localRotation = Quaternion.Euler(2.213f, -88.58f, -88.284f);
-            RightLegTibia.localRotation = Quaternion.Euler(0f, 0f, 0f);
-        }
+       
     }
 
 
@@ -112,14 +105,20 @@ public class PersonnageDeplacement : MonoBehaviour
     {
         
         //courir 
-        if (Input.GetButtonDown("Fire3") && FloorIsTouch && speed == basicSpeed)
+        if (Input.GetButtonDown("LeftShift") && FloorIsTouch && speed == basicSpeed)
         {
             speed *= 2;
+            if (animation.GetBool("isWalking") == true)
+            {
+                animation.SetBool("isRunning", true);
+            }
         }
         //fin de courir
-        if (Input.GetButtonUp("Fire3") && FloorIsTouch && speed == basicSpeed * 2)
+        if (Input.GetButtonUp("LeftShift") && FloorIsTouch && speed == basicSpeed * 2)
         {
             speed /= 2;
+            animation.SetBool("isRunning", false);
+
         }
 
     }
