@@ -1,12 +1,11 @@
-﻿using System.Collections;
+﻿
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Windows.Input;
 
 public class gunsScript : MonoBehaviour
 {
-
-
 
     //Public//
     public float maxRange = 100f;
@@ -43,6 +42,7 @@ public class gunsScript : MonoBehaviour
         */
     }
 
+
     public Vector3 RandomShotSprint
     {
         get { return randomShotSprint; }
@@ -68,16 +68,16 @@ public class gunsScript : MonoBehaviour
     void Update()
     {
         randomShotJump = new Vector3(Random.Range(-0.065f, 0.065f), Random.Range(-0.065f, 0.065f), 0f);
-        randomShotSprint = new Vector3(Random.Range(-0.07f, 0.07f), Random.Range(-0.07f, 0.07f), 0f);
+        randomShotSprint = new Vector3(Random.Range(-0.08f, 0.08f), Random.Range(-0.08f, 0.08f), 0f);
 
-        Debug.Log("asdasdas" + RandomShotJump);
+        //Debug.Log("gunsScript jump shot" + RandomShotJump);
 
         if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
-            {
-               nextTimeToFire = Time.time + 1f / fireRate;
-               shootSound.Play();
-               Shoot();
-            
+        {
+            nextTimeToFire = Time.time + 1f / fireRate;
+            shootSound.Play();
+            Shoot();
+
         }
     }
 
@@ -97,7 +97,7 @@ public class gunsScript : MonoBehaviour
     //cette methode permet 
     void Shoot()
     {
-        
+
 
         if (Input.GetButton("Space"))
         {
@@ -114,8 +114,8 @@ public class gunsScript : MonoBehaviour
             //Debug.Log("StaticShot");
             StaticShot();
         }
-        
-      
+
+
     }
 
 
@@ -145,7 +145,7 @@ public class gunsScript : MonoBehaviour
     {
         muzzleFlash.Play();//affiche l'effet
 
-        
+
 
         RaycastHit hit;
 
@@ -159,7 +159,7 @@ public class gunsScript : MonoBehaviour
             {
                 target.TakeDamage(damage);
             }
-                        
+
             GameObject bulletEffect = Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(bulletEffect, 1f);
         }
@@ -170,7 +170,7 @@ public class gunsScript : MonoBehaviour
     {
         muzzleFlash.Play();//affiche l'effet
 
-      
+
         RaycastHit hit;
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward + randomShotSprint, out hit, maxRange))
         {

@@ -29,8 +29,8 @@ public class Targget : MonoBehaviour
     //Cette methode sert a pouvoir mourir dans le jeu
     void Die()
     {
-        
-        foreach(GameObject gameobject in bulletHoles)
+
+        foreach (GameObject gameobject in bulletHoles)
         {
             Destroy(gameobject);
         }
@@ -43,7 +43,7 @@ public class Targget : MonoBehaviour
     public void addBulletHole(GameObject bulletHole)
     {
         bulletHoles.Add(bulletHole);
-        if(!damageable)
+        if (!damageable)
         {
             Destroy(bulletHole, 3f);
         }
@@ -54,7 +54,7 @@ public class Targget : MonoBehaviour
     public float Health
     {
         get { return heatlh; }
-        
+
     }
-        
+
 }

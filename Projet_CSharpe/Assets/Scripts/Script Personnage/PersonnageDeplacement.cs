@@ -11,7 +11,7 @@ public class PersonnageDeplacement : MonoBehaviour
     public float speed = 12f;  
     public float gravity = -9.81f;
     public float jump = 4;
-    Animator animation;
+    Animator animations;
 
 
     //Private//
@@ -24,8 +24,8 @@ public class PersonnageDeplacement : MonoBehaviour
     void Start()
     {
         basicSpeed = speed;
-        animation = gameObject.GetComponent<Animator>();
-
+        animations = gameObject.GetComponent<Animator>();
+        
     }
 
 
@@ -58,20 +58,33 @@ public class PersonnageDeplacement : MonoBehaviour
         float x = Input.GetAxisRaw("Horizontal");
         float z = Input.GetAxisRaw("Vertical");
 
-        //Déplacement
         Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
 
-        if(z == 1)
+
+        //cette condition sert a garder la même vitesse quant appuie sur une seul touche ou deux touche en même temps
+        //A savoir x c'est juste quand il va a droite x=1 quand bouge pas 0 et quand il va a gauche a -1
+        if (x != 0 && z != 0)
         {
-            animation.SetBool("isWalking", true);
+            controller.Move(move / 2 * speed * Time.deltaTime);
+        }
+        else
+        {
+            controller.Move(move * speed * Time.deltaTime);
+        }
+
+
+
+
+        if (z == 1)
+        {
+            animations.SetBool("isWalking", true);
         }
         else if(z == -1)
         {
 
         }else if(z == 0)
         {
-            animation.SetBool("isWalking", false);
+            animations.SetBool("isWalking", false);
         }
         
     }
@@ -86,7 +99,18 @@ public class PersonnageDeplacement : MonoBehaviour
             if (FloorIsTouch)
             {
                 velocity.y = jump;
-                speed = basicSpeed;
+
+                while (speed > basicSpeed)
+                {
+                    speed = speed - 0.5f; //ATTENTION IL FAUT QU^'IL TERMINE PAS 0 OU 5 POUR QU'IL PUISSE VRM ATTEINDRE 5 
+
+                    if (speed <= 0)
+                    {
+                        break;
+                    }
+                }
+
+                Debug.Log(speed);
                 FloorIsTouch = false;
             }
         }
@@ -108,16 +132,19 @@ public class PersonnageDeplacement : MonoBehaviour
         if (Input.GetButtonDown("LeftShift") && FloorIsTouch && speed == basicSpeed)
         {
             speed *= 2;
-            if (animation.GetBool("isWalking") == true)
+            if (animations.GetBool("isWalking") == true)
             {
-                animation.SetBool("isRunning", true);
+                animations.SetBool("isRunning", true);
             }
         }
         //fin de courir
         if (Input.GetButtonUp("LeftShift") && FloorIsTouch && speed == basicSpeed * 2)
         {
             speed /= 2;
-            animation.SetBool("isRunning", false);
+            if (animations.GetBool("isWalking") == false)
+            {
+                animations.SetBool("isRunning", false);
+            }
 
         }
 
