@@ -19,7 +19,6 @@ public class BulletHole : MonoBehaviour
     {
         distance = 1000f;
         cam = Camera.main;
-        takeMethode = new gunsScript();
     }
 
 

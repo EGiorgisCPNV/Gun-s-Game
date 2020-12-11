@@ -11,12 +11,13 @@ public class PersonnageDeplacement : MonoBehaviour
     public float speed = 12f;  
     public float gravity = -9.81f;
     public float jump = 4;
-    Animator animations;
+    
 
 
     //Private//
     private float basicSpeed;
-    private bool FloorIsTouch = false;
+    public bool floorIsTouch = false;
+    Animator animations;
     Vector3 velocity;//qlq chose de type Vector3 c'est juste pour indiquer une position -> velocity(1,1,1) = position 1,1,1 tout bêtement
 
 
@@ -25,7 +26,6 @@ public class PersonnageDeplacement : MonoBehaviour
     {
         basicSpeed = speed;
         animations = gameObject.GetComponent<Animator>();
-        
     }
 
 
@@ -34,8 +34,8 @@ public class PersonnageDeplacement : MonoBehaviour
     {
 
         isCollider();
-        toMove();
         toJump();
+        toMove();
         toCrouch();
         toSprint();
         GetGravity();
@@ -48,7 +48,15 @@ public class PersonnageDeplacement : MonoBehaviour
     {
         if (controller.isGrounded)
         {
-            FloorIsTouch = true;
+            floorIsTouch = true;
+        }
+    }
+
+    public bool FloorIsTouch
+    {
+        get
+        {
+            return floorIsTouch;
         }
     }
 
@@ -111,7 +119,9 @@ public class PersonnageDeplacement : MonoBehaviour
                 }
 
                 //Debug.Log(speed);
-                FloorIsTouch = false;
+                floorIsTouch = false;
+
+
             }
         }
     }
@@ -129,7 +139,7 @@ public class PersonnageDeplacement : MonoBehaviour
     {
         
         //courir 
-        if (Input.GetButtonDown("LeftShift") && FloorIsTouch && speed == basicSpeed)
+        if (Input.GetButtonDown("LeftShift") && floorIsTouch && speed == basicSpeed)
         {
             speed *= 2;
             if (animations.GetBool("isWalking") == true)
@@ -138,7 +148,7 @@ public class PersonnageDeplacement : MonoBehaviour
             }
         }
         //fin de courir
-        if (Input.GetButtonUp("LeftShift") && FloorIsTouch && speed == basicSpeed * 2)
+        if (Input.GetButtonUp("LeftShift") && floorIsTouch && speed == basicSpeed * 2)
         {
             speed /= 2;
             if (animations.GetBool("isWalking") == false)

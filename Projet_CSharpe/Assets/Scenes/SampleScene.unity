@@ -303,6 +303,7 @@ MonoBehaviour:
   speed: 5
   gravity: -9.81
   jump: 4
+  floorIsTouch: 0
 --- !u!114 &140011806
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -348,6 +349,20 @@ CharacterController:
   m_SkinWidth: 0.08
   m_MinMoveDistance: 0.001
   m_Center: {x: 0, y: 0.94, z: 0}
+--- !u!114 &140011809
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 140011802}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 696e05faaa115c04faaf36a49aeb1cae, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mouseSensitivity: 100
+  playerBody: {fileID: 963194228}
 --- !u!1 &144917049 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 100084, guid: 765e2fde8c84f094e99304c6198491ea,
@@ -368,6 +383,26 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   playerBody: {fileID: 1704991933}
+--- !u!1 &300627395 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 100000, guid: 93e86b57e56570d46814839867bf9a52,
+    type: 3}
+  m_PrefabInstance: {fileID: 953384500}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &300627399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 300627395}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 435a72692c22ffd449348f46079da333, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  heatlh: 10000
+  damageable: 0
 --- !u!1 &365002893
 GameObject:
   m_ObjectHideFlags: 0
@@ -567,6 +602,7 @@ MonoBehaviour:
   speed: 5
   gravity: -9.81
   jump: 4
+  floorIsTouch: 0
 --- !u!65 &485057178
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -6276,7 +6312,7 @@ Light:
   m_BounceIntensity: 1
   m_ColorTemperature: 6570
   m_UseColorTemperature: 0
-  m_BoundingSphereOverride: {x: 0, y: 7.4e-44, z: 2.811e-42, w: 5.9e-44}
+  m_BoundingSphereOverride: {x: 5.41e-43, y: 2.06e-43, z: 0, w: -3.9329243}
   m_UseBoundingSphereOverride: 0
   m_ShadowRadius: 0
   m_ShadowAngle: 0
@@ -6847,6 +6883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 621223f2bcf8e8e4fbaa6efba67f742a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  personnage: {fileID: 140011805}
   maxRange: 100
   fpsCam: {fileID: 963194227}
   muzzleFlash: {fileID: 677432599}
