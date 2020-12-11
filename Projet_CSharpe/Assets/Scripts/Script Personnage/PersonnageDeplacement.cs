@@ -110,7 +110,7 @@ public class PersonnageDeplacement : MonoBehaviour
                     }
                 }
 
-                Debug.Log(speed);
+                //Debug.Log(speed);
                 FloorIsTouch = false;
             }
         }

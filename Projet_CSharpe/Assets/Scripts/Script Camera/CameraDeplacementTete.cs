@@ -19,7 +19,6 @@ public class CameraDeplacementTete : MonoBehaviour
     {
         //Masque le curseur au lancement du jeu 
         Cursor.lockState = CursorLockMode.Locked;
-
     }
 
 
@@ -37,6 +36,7 @@ public class CameraDeplacementTete : MonoBehaviour
         //Deplacement camera
         transform.localRotation = Quaternion.Euler(xRotation, 0f, 0f);// axe Y
 
-
+        //Debug.Log(transform.localRotation);
+        
     }
 }

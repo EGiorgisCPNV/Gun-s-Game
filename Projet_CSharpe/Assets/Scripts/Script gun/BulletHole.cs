@@ -8,7 +8,7 @@ public class BulletHole : MonoBehaviour
 
     //Public//
     public GameObject bulletHole;
-    public float distance = 1000f;
+    public float distance;
     gunsScript takeMethode;
 
     //Private//
@@ -17,6 +17,7 @@ public class BulletHole : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        distance = 1000f;
         cam = Camera.main;
         takeMethode = new gunsScript();
     }
