@@ -303,6 +303,7 @@ MonoBehaviour:
   speed: 5
   gravity: -9.81
   jump: 4
+  test: 0
   floorIsTouch: 0
 --- !u!114 &140011806
 MonoBehaviour:
@@ -318,6 +319,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   playerBody: {fileID: 140011804}
+  personneCam: {fileID: 140011805}
 --- !u!65 &140011807
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -568,6 +570,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   mouseSensitivity: 100
   playerBody: {fileID: 2090186006}
+  personneCam: {fileID: 0}
 --- !u!143 &485057176
 CharacterController:
   m_ObjectHideFlags: 0
@@ -602,6 +605,7 @@ MonoBehaviour:
   speed: 5
   gravity: -9.81
   jump: 4
+  test: 0
   floorIsTouch: 0
 --- !u!65 &485057178
 BoxCollider:

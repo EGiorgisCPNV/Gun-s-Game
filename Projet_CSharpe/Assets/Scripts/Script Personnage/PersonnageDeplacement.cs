@@ -11,7 +11,7 @@ public class PersonnageDeplacement : MonoBehaviour
     public float speed = 12f;  
     public float gravity = -9.81f;
     public float jump = 4;
-    
+    public bool test = false;
 
 
     //Private//
@@ -57,6 +57,21 @@ public class PersonnageDeplacement : MonoBehaviour
         get
         {
             return floorIsTouch;
+        }
+    }
+
+
+    public bool Test
+    {
+        get
+        {
+            return test;
+            
+        }
+        set
+        {
+            test = value;
+            Debug.Log(test);
         }
     }
 

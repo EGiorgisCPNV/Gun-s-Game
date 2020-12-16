@@ -1,7 +1,4 @@
-﻿
-
-
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using System.Windows.Input;
@@ -17,6 +14,7 @@ public class gunsScript : MonoBehaviour
     public GameObject impact;
     public float fireRate = 15f;
 
+
     //Private//
     private Vector3 variableAccuracy;
     private Vector3 accuracyDiminution;
@@ -26,7 +24,6 @@ public class gunsScript : MonoBehaviour
     Vector3 randomShotWalk;
     Vector3 randomShotJump;
     Vector3 randomShotSprint;
-  
 
 
     //cette accesseur sert a retourner la valeur des dégats
@@ -36,8 +33,12 @@ public class gunsScript : MonoBehaviour
     }
 
 
+  
+
+
     public Vector3 RandomShotJump
     {
+       
         get { return randomShotJump; }
         /*
         set
@@ -66,6 +67,7 @@ public class gunsScript : MonoBehaviour
     //cette methode est appelée au lancement du programe 
     private void Start()
     {
+
         nextTimeToFire = 0f;
         shootSound = GetComponent<AudioSource>();
         variableAccuracy = new Vector3(0f,0f,0f);
@@ -123,7 +125,10 @@ public class gunsScript : MonoBehaviour
         {
             Debug.Log("StaticShot");
             StaticShot();
+            
         }
+
+
 
 
     }
@@ -134,13 +139,18 @@ public class gunsScript : MonoBehaviour
         muzzleFlash.Play();//affiche l'effet
 
         variableAccuracy += accuracyDiminution;//Diminution de la précision au fil du tir
+        personnage.Test = true;
 
         RaycastHit hit;
 
         if (Physics.Raycast(fpsCam.transform.position, fpsCam.transform.forward + variableAccuracy, out hit, maxRange))
         {
-            //Debug.Log(hit.transform.name);
-            //fpsCam.transform;
+            
+                personnage.transform.rotation = Quaternion.Euler((fpsCam.transform.forward + variableAccuracy).x, (fpsCam.transform.forward + variableAccuracy).y, 0f);
+         
+             
+
+
 
             //Debug.Log(fpsCam.transform);
 
@@ -153,6 +163,7 @@ public class gunsScript : MonoBehaviour
             GameObject bulletEffect = Instantiate(impact, hit.point, Quaternion.LookRotation(hit.normal));
             Destroy(bulletEffect, 1f);
         }
+        
     }
 
 
