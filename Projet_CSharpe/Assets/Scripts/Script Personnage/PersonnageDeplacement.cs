@@ -95,21 +95,78 @@ public class PersonnageDeplacement : MonoBehaviour
             controller.Move(move * speed * Time.deltaTime);
         }
 
-
+        Debug.Log(x);
 
 
         if (z == 1)
         {
             animations.SetBool("isWalking", true);
+            animations.SetBool("isCrouching", true);
         }
         else if(z == -1)
         {
-
-        }else if(z == 0)
+            animations.SetBool("isWalkingBack", true);
+            animations.SetBool("isCrouchingBack", true);
+        }
+        else if(z == 0)
         {
             animations.SetBool("isWalking", false);
+            animations.SetBool("isWalkingBack", false);
+            animations.SetBool("isCrouching", false);
+            animations.SetBool("isCrouchingBack", false);
         }
-        
+
+        if (x == 1)
+        {
+            animations.SetBool("isWalkingRight", true);
+            animations.SetBool("isCrouchingRight", true);
+
+        }
+        else if (x == -1)
+        {
+            animations.SetBool("isWalkingLeft", true);
+            animations.SetBool("isCrouchingLeft", true);
+        }
+        else if (x == 0)
+        {
+            animations.SetBool("isWalkingRight", false);
+            animations.SetBool("isWalkingLeft", false);
+            animations.SetBool("isCrouchingRight", false);
+            animations.SetBool("isCrouchingLeft", false);
+        }
+
+
+        //courir 
+        if (Input.GetButtonDown("LeftShift") && floorIsTouch && speed == basicSpeed && (z == 1 || z == -1 || x == 1 || x == -1))
+        {
+            speed *= 2;
+            if (animations.GetBool("isWalking") == true)
+            {
+                animations.SetBool("isRunning", true);
+            }
+            else if (animations.GetBool("isWalkingBack") == true)
+            {
+                animations.SetBool("isRunningBack", true);
+            }
+            else if (animations.GetBool("isWalkingRight") == true)
+            {
+                animations.SetBool("isRunningRight", true);
+            }
+            else if (animations.GetBool("isWalkingLeft") == true)
+            {
+                animations.SetBool("isRunningLeft", true);
+            }
+        }
+        //fin de courir
+        if (Input.GetButtonUp("LeftShift") && floorIsTouch && speed == basicSpeed * 2)
+        {
+            speed /= 2;
+
+            animations.SetBool("isRunning", false);
+            animations.SetBool("isRunningBack", false);
+            animations.SetBool("isRunningRight", false);
+            animations.SetBool("isRunningLeft", false);
+        }
     }
 
 
@@ -145,33 +202,21 @@ public class PersonnageDeplacement : MonoBehaviour
     //Methode pour pouvoir s'acroupir
     private void toCrouch()
     {
-       
+        if (Input.GetButtonDown("LeftCtrl"))
+        {
+            animations.SetBool("isCrouchingIDLE", true);
+
+        }
+        else if (Input.GetButtonUp("LeftCtrl"))
+        {
+            animations.SetBool("isCrouchingIDLE", false);
+        }
     }
-
-
     //Methode pour pouvoir courir
     private void toSprint()
     {
         
-        //courir 
-        if (Input.GetButtonDown("LeftShift") && floorIsTouch && speed == basicSpeed)
-        {
-            speed *= 2;
-            if (animations.GetBool("isWalking") == true)
-            {
-                animations.SetBool("isRunning", true);
-            }
-        }
-        //fin de courir
-        if (Input.GetButtonUp("LeftShift") && floorIsTouch && speed == basicSpeed * 2)
-        {
-            speed /= 2;
-            if (animations.GetBool("isWalking") == false)
-            {
-                animations.SetBool("isRunning", false);
-            }
-
-        }
+       
 
     }
 
