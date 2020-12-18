@@ -156,16 +156,22 @@ public class PersonnageDeplacement : MonoBehaviour
             {
                 animations.SetBool("isRunningLeft", true);
             }
+          
         }
         //fin de courir
         if (Input.GetButtonUp("LeftShift") && floorIsTouch && speed == basicSpeed * 2)
         {
             speed /= 2;
 
-            animations.SetBool("isRunning", false);
-            animations.SetBool("isRunningBack", false);
-            animations.SetBool("isRunningRight", false);
-            animations.SetBool("isRunningLeft", false);
+            
+                animations.SetBool("isRunning", false);
+            
+                animations.SetBool("isRunningBack", false);
+            
+                animations.SetBool("isRunningRight", false);
+            
+                animations.SetBool("isRunningLeft", false);
+            
         }
     }
 
