@@ -4,6 +4,9 @@ using UnityEngine.UI;
 
 public class AutomaticGunScriptLPFP : MonoBehaviour {
 
+	public float damage1 = 5.0f;
+	public float range = 100f;
+
 	//Animator component attached to weapon
 	Animator anim;
 
@@ -96,6 +99,7 @@ public class AutomaticGunScriptLPFP : MonoBehaviour {
 		public SpriteRenderer scope3SpriteRenderer;
 		public SpriteRenderer scope4SpriteRenderer;
 	}
+
 	public weaponAttachmentRenderers WeaponAttachmentRenderers;
 
 	[Header("Weapon Sway")]
@@ -414,12 +418,49 @@ public class AutomaticGunScriptLPFP : MonoBehaviour {
 					initialSwayPosition, Time.deltaTime * swaySmoothValue);
 		}
 	}
-	
+
+	void Shoot()
+	{
+			if( outOfAmmo == true || isReloading == true)
+            {
+
+            }
+            else
+            {
+			RaycastHit hit;
+			if (Physics.Raycast(gunCamera.transform.position, gunCamera.transform.forward, out hit, range))
+			{
+				Debug.Log(hit.transform.name);
+
+				Target target = hit.transform.GetComponent<Target>();
+				if (target != null)
+				{
+					target.TakeDamage(damage1);
+				}
+				Instantiate(impactEffect, hit.point, Quaternion.LookRotation(hit.normal));
+			}
+			
+		}
+	}
+
+	public GameObject impactEffect;
+	private float nextTimeToFire = 0f;
+
 	private void Update () {
 
-		//Aiming
-		//Toggle camera FOV when right click is held down
-		if(Input.GetButton("Fire2") && !isReloading && !isRunning && !isInspecting) 
+
+		if (Input.GetButton("Fire1") && Time.time >= nextTimeToFire)
+		{
+			nextTimeToFire = Time.time + 1f / fireRate;
+			Shoot();
+	
+		}
+
+		
+
+			//Aiming
+			//Toggle camera FOV when right click is held down
+			if (Input.GetButton("Fire2") && !isReloading && !isRunning && !isInspecting) 
 		{
 			if (ironSights == true) 
 			{
